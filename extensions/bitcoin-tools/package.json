@@ -1,6 +1,7 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "bitcoin-tools",
+  "version": "0.0.1",
   "type": "module",
   "title": "Bitcoin Tools",
   "description": "Generate, convert, and inspect Bitcoin SV keys, addresses, scripts, transactions, and market data.",
