@@ -20,7 +20,7 @@ Generated values can be inserted into the focused application, copied to the cli
 
 ## Security and Data Sources
 
-WIF conversion and all key generation happen locally. Private keys are never sent over the network or written to logs. A generated WIF or XPRIV may be placed in the clipboard or focused application according to your preferences, so treat both destinations as sensitive.
+WIF conversion and all key generation happen locally. Private keys are never sent over the network, written to logs, or inserted into the focused application. Generated WIF and XPRIV values are copied to the clipboard, so treat clipboard contents as sensitive.
 
 Market data comes from CoinPaprika and chain height comes from WhatsOnChain. The menu-bar command stores the last valid response in Raycast's local cache and continues rendering it when either service is temporarily unavailable.
 

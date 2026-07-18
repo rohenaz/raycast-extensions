@@ -127,18 +127,18 @@
   "preferences": [
     {
       "name": "copy",
-      "description": "Determines whether generated values are copied to the clipboard.",
+      "description": "Determines whether generated non-secret values are copied to the clipboard. WIF and XPRIV values are always copied.",
       "type": "checkbox",
-      "default": false,
+      "default": true,
       "required": true,
       "title": "Copy Generated Values",
       "label": "Copy"
     },
     {
       "name": "insert",
-      "description": "Determines whether generated values are inserted into the currently focused app.",
+      "description": "Determines whether generated non-secret values are inserted into the currently focused app. WIF and XPRIV values are never inserted.",
       "type": "checkbox",
-      "default": true,
+      "default": false,
       "required": true,
       "title": "Insert Generated Values",
       "label": "Insert"

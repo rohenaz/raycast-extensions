@@ -1,28 +1,22 @@
 import { Clipboard, getPreferenceValues, showHUD } from "@raycast/api";
 
-interface OutputPreferences {
-  copy: boolean;
-  insert: boolean;
-}
-
 export async function outputGeneratedValue(
   value: string,
   label: string,
   sensitive = false,
 ): Promise<void> {
-  const preferences = getPreferenceValues<OutputPreferences>();
+  const preferences = getPreferenceValues<Preferences>();
+  const shouldCopy = sensitive || preferences.copy;
+  const shouldInsert = !sensitive && preferences.insert;
 
-  if (preferences.copy) {
+  if (shouldCopy) {
     await Clipboard.copy(value);
   }
-  if (preferences.insert) {
+  if (shouldInsert) {
     await Clipboard.paste(value);
   }
 
-  const destination = [
-    preferences.copy && "copied",
-    preferences.insert && "inserted",
-  ]
+  const destination = [shouldCopy && "copied", shouldInsert && "inserted"]
     .filter(Boolean)
     .join(" and ");
   const valueDescription = sensitive ? label : `${label} ${value}`;
