@@ -121,7 +121,7 @@
     "lint": "biome check src tests package.json tsconfig.json biome.json",
     "lint:fix": "biome check --write src tests package.json tsconfig.json biome.json",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "ray build -e dist && tsc --noEmit",
     "publish": "npx @raycast/api@latest publish"
   },
   "preferences": [
